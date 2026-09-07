@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Студент</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f6f9;
+        margin: 0;
+        padding: 40px;
+    }
+    .card {
+        max-width: 550px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 12px;
+        padding: 36px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    }
+    h1 {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 28px;
+    }
+    .info-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 12px 0;
+        border-bottom: 1px solid #eee;
+    }
+    .info-row:last-child {
+        border-bottom: none;
+    }
+    .info-label {
+        font-weight: bold;
+        color: #7f8c8d;
+    }
+    .info-value {
+        color: #2c3e50;
+    }
+    .nav-links {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        margin-top: 28px;
+    }
+    .nav-links a {
+        color: #3498db;
+        text-decoration: none;
+    }
+    .nav-links a:hover {
+        text-decoration: underline;
+    }
+    .highlight {
+        background-color: #eaf6ff;
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div class="card">
+  <h1>Информация о студенте</h1>
+
+  <div class="info-row">
+    <span class="info-label">Id:</span>
+    <span class="info-value" th:text="${student.id}"></span>
+  </div>
+  <div class="info-row">
+    <span class="info-label">Фамилия:</span>
+    <span class="info-value" th:text="${student.surname}"></span>
+  </div>
+  <div class="info-row">
+    <span class="info-label">Имя:</span>
+    <span class="info-value" th:text="${student.name}"></span>
+  </div>
+  <div class="info-row">
+    <span class="info-label">Отчество:</span>
+    <span class="info-value" th:text="${student.patronymic}"></span>
+  </div>
+  <div class="info-row">
+    <span class="info-label">E-mail:</span>
+    <span class="info-value" th:text="${student.email}"></span>
+  </div>
+  <div class="info-row">
+    <span class="info-label">Год поступления:</span>
+    <span class="info-value" th:text="${student.admissionYear}"></span>
+  </div>
+  <div class="info-row">
+    <span class="info-label">Группа:</span>
+    <span class="info-value highlight" th:text="${student.group}"></span>
+  </div>
+  <div class="info-row">
+    <span class="info-label">Логин для портала:</span>
+    <span class="info-value highlight" th:text="${student.login}"></span>
+  </div>
+
+  <div class="nav-links">
+    <a href="/form">Ввести новую информацию</a>
+    <a href="/">На главную</a>
+  </div>
+</div>
+</body>
+</html>

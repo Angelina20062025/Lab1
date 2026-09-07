@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Новый студент</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f6f9;
+        margin: 0;
+        padding: 40px;
+    }
+    .card {
+        max-width: 500px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 12px;
+        padding: 32px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    }
+    h1 {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 24px;
+    }
+    label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 6px;
+        color: #34495e;
+    }
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        box-sizing: border-box;
+        font-size: 14px;
+        margin-bottom: 16px;
+    }
+    input[type="text"]:focus {
+        border-color: #3498db;
+        outline: none;
+    }
+    .buttons {
+        display: flex;
+        gap: 12px;
+        margin-top: 8px;
+    }
+    .btn {
+        flex: 1;
+        padding: 12px;
+        border: none;
+        border-radius: 6px;
+        font-size: 15px;
+        cursor: pointer;
+    }
+    .btn-submit {
+        background-color: #3498db;
+        color: white;
+    }
+    .btn-submit:hover {
+        background-color: #2980b9;
+    }
+    .btn-reset {
+        background-color: #e0e0e0;
+        color: #333;
+    }
+    .btn-reset:hover {
+        background-color: #c0c0c0;
+    }
+    .nav-link {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        color: #3498db;
+        text-decoration: none;
+    }
+    .nav-link:hover {
+        text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+<div class="card">
+  <h1>Форма информации о студенте</h1>
+  <form action="#" th:action="@{/form}" th:object="${student}" method="post">
+    <div>
+      <label>Id:</label>
+      <input type="text" th:field="*{id}" />
+    </div>
+    <div>
+      <label>Фамилия:</label>
+      <input type="text" th:field="*{surname}" />
+    </div>
+    <div>
+      <label>Имя:</label>
+      <input type="text" th:field="*{name}" />
+    </div>
+    <div>
+      <label>Отчество:</label>
+      <input type="text" th:field="*{patronymic}" />
+    </div>
+    <div>
+      <label>E-mail:</label>
+      <input type="text" th:field="*{email}"/>
+    </div>
+    <div>
+      <label>Год поступления:</label>
+      <input type="text" th:field="*{admissionYear}" />
+    </div>
+    <div class="buttons">
+      <button type="submit" class="btn btn-submit">Отправить</button>
+      <button type="reset" class="btn btn-reset">Сброс</button>
+    </div>
+  </form>
+  <a href="/" class="nav-link">На главную</a>
+</div>
+</body>
+</html>
